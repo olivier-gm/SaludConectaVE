@@ -13,9 +13,6 @@ import {
     UserIcon,
     IdCardIcon,
     MobileIcon,
-    ConfirmedIcon,
-    WarningIcon,
-    SearchIcon as _SearchIcon
 } from '../components/icons';
 
 type Page = 'home' | 'search' | 'booking' | 'appointments' | 'contact' | 'my-info';

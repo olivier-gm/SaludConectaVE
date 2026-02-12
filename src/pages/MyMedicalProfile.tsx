@@ -12,7 +12,6 @@ import { Card, Button } from '../components/ui';
 import { useAuth } from '../contexts/AuthContext';
 import { getDoctorById, getHealthCenterById, specialties } from '../data/mockData';
 import {
-    UserIcon,
     CameraIcon,
     SaveIcon,
     CalendarIcon,

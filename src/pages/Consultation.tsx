@@ -11,7 +11,6 @@ import { Card, Button, Input } from '../components/ui';
 import { useAuth } from '../contexts/AuthContext';
 import { useAppointments } from '../contexts/AppointmentContext';
 import {
-    getDoctorById,
     clinicalNotes as mockNotes,
     drugs as mockDrugs,
     demoUsers
@@ -40,7 +39,7 @@ const ConsultationPage: React.FC<ConsultationPageProps> = ({
     onLogout,
 }) => {
     const { user: doctorUser } = useAuth();
-    const { appointments, updateAppointmentStatus } = useAppointments();
+    const { updateAppointmentStatus } = useAppointments();
 
     // Estados principales
     const [patient, setPatient] = useState<User | null>(null);
@@ -248,7 +247,7 @@ const ConsultationPage: React.FC<ConsultationPageProps> = ({
                         <div className="mb-4">
                             <Input
                                 placeholder="Buscar medicamento..."
-                                icon={<SearchIcon size="sm" />}
+                                leftIcon={<SearchIcon size="sm" />}
                                 value={drugSearch}
                                 onChange={e => setDrugSearch(e.target.value)}
                             />

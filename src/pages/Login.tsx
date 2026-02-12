@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Logo from '../components/Logo';
 import { Button, Input, Card, Spinner } from '../components/ui';
-import { AcademicIcon, UserIcon, DocumentIcon } from '../components/icons';
+// Icons available: AcademicIcon, UserIcon, DocumentIcon from '../components/icons'
 import { useAuth } from '../contexts/AuthContext';
 
 interface LoginPageProps {
@@ -18,7 +18,7 @@ type AuthMode = 'login' | 'register';
 /**
  * Pantalla de Login con acceso demo y formulario real
  */
-const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria, onLoginPablo, onLoginSuccess }) => {
+const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLoginPablo: _onLoginPablo, onLoginSuccess }) => {
     const { loginWithEmail, register } = useAuth();
     const [mode, setMode] = useState<AuthMode>('login');
     const [isLoading, setIsLoading] = useState(false);

@@ -128,7 +128,7 @@ const ScheduleConfig: React.FC<ScheduleConfigProps> = ({ onNavigate, onLogout })
                     </div>
 
                     <div className="divide-y divide-gray-100">
-                        {schedule.map((day, index) => (
+                        {schedule.map((day: any, index: number) => (
                             <div key={day.day} className={`p-4 flex flex-col sm:flex-row items-center justify-between gap-4 transition-colors ${day.active ? 'bg-white' : 'bg-gray-50'}`}>
                                 <div className="flex items-center gap-4 min-w-[150px]">
                                     <div className="relative inline-flex items-center cursor-pointer group/toggle">

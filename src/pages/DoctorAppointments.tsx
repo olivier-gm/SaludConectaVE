@@ -6,8 +6,8 @@
  */
 
 import React, { useState } from 'react';
-import { Navbar, BackButton } from '../components/layout';
-import { Card, Button } from '../components/ui';
+import { Navbar } from '../components/layout';
+import { Button } from '../components/ui';
 import { useAuth } from '../contexts/AuthContext';
 import { useAppointments } from '../contexts/AppointmentContext';
 import { AppointmentStatus } from '../types';

@@ -5,7 +5,7 @@
  * Inicializa la base de datos con mockData si está vacía.
  */
 
-import { User, Doctor, Appointment, HealthCenter, Specialty } from '../types';
+import { User, Doctor, Appointment } from '../types';
 import { demoUsers, doctors, healthCenters, specialties } from '../data/mockData';
 
 const DB_KEYS = {
