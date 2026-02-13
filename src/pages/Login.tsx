@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Logo from '../components/Logo';
 import { Button, Input, Card, Spinner } from '../components/ui';
-// Icons available: AcademicIcon, UserIcon, DocumentIcon from '../components/icons'
+import AboutModal from '../components/AboutModal';
 import { useAuth } from '../contexts/AuthContext';
 
 interface LoginPageProps {
@@ -22,6 +22,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
     const { loginWithEmail, register } = useAuth();
     const [mode, setMode] = useState<AuthMode>('login');
     const [isLoading, setIsLoading] = useState(false);
+    const [showAbout, setShowAbout] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     // Form states
@@ -99,6 +100,17 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
                     <p className="text-sm text-gray-500 mt-1">
                         San Juan de los Morros, Estado Guárico
                     </p>
+
+                    {/* Botón ¿Quiénes somos? */}
+                    <button
+                        onClick={() => setShowAbout(true)}
+                        className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm text-salud-primario text-sm font-semibold rounded-full shadow-md hover:shadow-lg hover:bg-white border border-sky-200 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer group"
+                    >
+                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        ¿Quiénes somos?
+                    </button>
                 </div>
             </div>
 
@@ -233,6 +245,9 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
                     Proyecto Universitario • UNERG 2026-1
                 </p>
             </div>
+
+            {/* Modal ¿Quiénes somos? */}
+            <AboutModal isOpen={showAbout} onClose={() => setShowAbout(false)} />
         </div>
     );
 };
