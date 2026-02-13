@@ -48,6 +48,11 @@ export { DocumentIcon } from './alerts/Document';
 export { WaveIcon } from './alerts/Wave';
 export { SadIcon } from './alerts/Sad';
 
+
+// Redes Sociales
+export { InstagramIcon } from './social/Instagram';
+
 // Acciones y Varios
 export { CameraIcon, SaveIcon, MapIcon, StethoscopeIcon } from './actions/ActionIcons';
+
 

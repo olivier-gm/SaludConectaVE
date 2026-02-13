@@ -3,6 +3,7 @@ import Logo from '../components/Logo';
 import { Button, Input, Card, Spinner } from '../components/ui';
 import AboutModal from '../components/AboutModal';
 import { useAuth } from '../contexts/AuthContext';
+import { InstagramIcon } from '../components/icons';
 
 interface LoginPageProps {
     /** Callback al simular login de María */
@@ -240,10 +241,22 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
 
                 {/* Acceso Demo - ELIMINADO */}
 
+
                 {/* Footer */}
-                <p className="text-center text-sm text-gray-400">
-                    Proyecto Universitario • UNERG 2026-1
-                </p>
+                <div className="flex flex-col items-center gap-2 mt-auto">
+                    <a
+                        href="https://www.instagram.com/saludconectave/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-pink-600 transition-colors duration-300 transform hover:scale-110"
+                        title="Síguenos en Instagram"
+                    >
+                        <InstagramIcon size="lg" />
+                    </a>
+                    <p className="text-center text-sm text-gray-400">
+                        Proyecto Universitario • UNERG 2026-1
+                    </p>
+                </div>
             </div>
 
             {/* Modal ¿Quiénes somos? */}
