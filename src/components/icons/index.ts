@@ -51,6 +51,7 @@ export { SadIcon } from './alerts/Sad';
 
 // Redes Sociales
 export { InstagramIcon } from './social/Instagram';
+export { FacebookIcon } from './social/Facebook';
 
 // Acciones y Varios
 export { CameraIcon, SaveIcon, MapIcon, StethoscopeIcon } from './actions/ActionIcons';

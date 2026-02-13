@@ -3,7 +3,7 @@ import Logo from '../components/Logo';
 import { Button, Input, Card, Spinner } from '../components/ui';
 import AboutModal from '../components/AboutModal';
 import { useAuth } from '../contexts/AuthContext';
-import { InstagramIcon } from '../components/icons';
+import { InstagramIcon, FacebookIcon } from '../components/icons';
 
 interface LoginPageProps {
     /** Callback al simular login de María */
@@ -244,15 +244,26 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
 
                 {/* Footer */}
                 <div className="flex flex-col items-center gap-2 mt-auto">
-                    <a
-                        href="https://www.instagram.com/saludconectave/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-gray-400 hover:text-pink-600 transition-colors duration-300 transform hover:scale-110"
-                        title="Síguenos en Instagram"
-                    >
-                        <InstagramIcon size="lg" />
-                    </a>
+                    <div className="flex items-center gap-4">
+                        <a
+                            href="https://www.instagram.com/saludconectave/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-pink-600 transition-colors duration-300 transform hover:scale-110"
+                            title="Síguenos en Instagram"
+                        >
+                            <InstagramIcon size="lg" />
+                        </a>
+                        <a
+                            href="https://www.facebook.com/profile.php?id=61588156944733"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-blue-600 transition-colors duration-300 transform hover:scale-110"
+                            title="Síguenos en Facebook"
+                        >
+                            <FacebookIcon size="lg" />
+                        </a>
+                    </div>
                     <p className="text-center text-sm text-gray-400">
                         Proyecto Universitario • UNERG 2026-1
                     </p>
