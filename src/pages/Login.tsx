@@ -24,6 +24,7 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
     const [mode, setMode] = useState<AuthMode>('login');
     const [isLoading, setIsLoading] = useState(false);
     const [showAbout, setShowAbout] = useState(false);
+    const [showOrganigrama, setShowOrganigrama] = useState(false);
     const [error, setError] = useState<string | null>(null);
 
     // Form states
@@ -102,16 +103,30 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
                         San Juan de los Morros, Estado Guárico
                     </p>
 
-                    {/* Botón ¿Quiénes somos? */}
-                    <button
-                        onClick={() => setShowAbout(true)}
-                        className="mt-4 inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm text-salud-primario text-sm font-semibold rounded-full shadow-md hover:shadow-lg hover:bg-white border border-sky-200 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer group"
-                    >
-                        <svg className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                        ¿Quiénes somos?
-                    </button>
+                    {/* Botones informativos */}
+                    <div className="mt-4 flex flex-wrap justify-center gap-3">
+                        {/* Botón ¿Quiénes somos? */}
+                        <button
+                            onClick={() => setShowAbout(true)}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm text-salud-primario text-sm font-semibold rounded-full shadow-md hover:shadow-lg hover:bg-white border border-sky-200 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer group"
+                        >
+                            <svg className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            ¿Quiénes somos?
+                        </button>
+
+                        {/* Botón Organigrama */}
+                        <button
+                            onClick={() => setShowOrganigrama(true)}
+                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white/80 backdrop-blur-sm text-salud-primario text-sm font-semibold rounded-full shadow-md hover:shadow-lg hover:bg-white border border-sky-200 transition-all duration-300 hover:-translate-y-0.5 active:scale-95 cursor-pointer group"
+                        >
+                            <svg className="w-4 h-4 transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM14 5a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1V5zM4 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1H5a1 1 0 01-1-1v-4zM14 15a1 1 0 011-1h4a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 01-1-1v-4z" />
+                            </svg>
+                            Organigrama
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -272,6 +287,40 @@ const LoginPage: React.FC<LoginPageProps> = ({ onLoginMaria: _onLoginMaria, onLo
 
             {/* Modal ¿Quiénes somos? */}
             <AboutModal isOpen={showAbout} onClose={() => setShowAbout(false)} />
+
+            {/* Modal Organigrama */}
+            {showOrganigrama && (
+                <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-fade-in"
+                    onClick={() => setShowOrganigrama(false)}
+                >
+                    <div
+                        className="relative bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-auto animate-slide-up"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        {/* Header */}
+                        <div className="flex items-center justify-between p-4 border-b border-gray-100">
+                            <h2 className="text-xl font-bold text-gray-800">Organigrama</h2>
+                            <button
+                                onClick={() => setShowOrganigrama(false)}
+                                className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors text-gray-500 hover:text-gray-700"
+                            >
+                                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        {/* Imagen */}
+                        <div className="p-4">
+                            <img
+                                src="/organi.jpg"
+                                alt="Organigrama de SaludConecta VE"
+                                className="w-full h-auto rounded-lg"
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
