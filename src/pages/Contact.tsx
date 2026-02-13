@@ -11,12 +11,12 @@ import React from 'react';
 import { Navbar, BackButton } from '../components/layout';
 import { Card, Button } from '../components/ui';
 import { healthCenters } from '../data/mockData';
-import { 
-    ChatIcon, 
-    InfoIcon, 
-    HospitalIcon, 
-    LocationIcon, 
-    PhoneIcon, 
+import {
+    ChatIcon,
+    InfoIcon,
+    HospitalIcon,
+    LocationIcon,
+    PhoneIcon,
     WarningIcon,
     DocumentIcon
 } from '../components/icons';
@@ -31,7 +31,7 @@ interface ContactPageProps {
 /**
  * URL de WhatsApp Business para testing
  */
-const WA_BUSINESS_URL = 'https://wa.me/message/SLKHQMQLGM3AI1';
+const WA_BUSINESS_URL = 'https://wa.me/+584145714897';
 
 /**
  * Pantalla de contacto con los centros de salud
